@@ -1,0 +1,229 @@
+/* (=^ᆺ^=) MENU (=^ᆺ^=) */
+
+$color-gray: #353535;
+$color-background: #f7f7f7;
+$color-white: #ffffff;
+$color-green: #99e2d0;
+
+/* (=^ᆺ^=) HERO MENU (=^ᆺ^=) */
+
+.hero-menu {
+    height: 180px;
+    position: relative;
+    display: flex;
+    &__gradient {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @media screen and (min-width: 1400px) {
+        background: rgb(255,255,255);
+        background: linear-gradient(280deg, rgba(255,255,255,1) 0%, rgba(50,37,100,0) 45%, rgba(50,37,100,0) 55%, rgba(255,255,255,1) 100%);
+      }
+    }
+    img {
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  
+  /* (=^ᆺ^=) MENU (=^ᆺ^=) */
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes appear-right-to-left {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 15%;
+    }
+  }
+
+  @keyframes disappear-left-to-right {
+    from {
+      width: 15%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .menu .menu-body:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .menu .menu-body:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .menu .menu-body:nth-child(3) {
+    animation-delay: 1s;
+  }
+  
+  .menu {
+    background-color: $color-background;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    top: -27px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 500px) {
+      padding: 25px 25px;
+    }
+    &-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 1300px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    &-header {
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      &__title {
+        margin: 0;
+      }
+      &__favorite {
+        display: flex;
+        align-items: center;
+      }
+      &__favorite:hover {
+        .menu-header__icon {
+          display: none;
+        }
+        .menu-header__icon-full {
+          display: block;
+        }
+      }
+      &__icon-full {
+        display: none; 
+      }
+    }
+  
+    &-body {
+      width: 100%;
+      opacity: 0;
+      animation: fade-in 1s forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+      &__title {
+        color: $color-gray;
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        max-width: 400px;
+      }
+      &__title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 4ch;
+        height: 3px;
+        background-color: $color-green;
+      }
+    }
+    .article {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    .card {
+      width: 100%;
+      background-color: $color-background;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
+      margin: 10px 0;
+      &-body {
+        width: 90%;
+        padding: 10px;
+      }
+      &__title {
+        font-size: 18px;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 95%;
+      }
+      &-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__content {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 90%;
+          color: $color-gray;
+        }
+        &__price {
+          font-weight: 700;
+          color: $color-gray;
+        }
+      }
+      &__button {
+        background-color: $color-green;
+        width: 15%;
+        border-radius: 0 15px 15px 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 20px;
+        }
+      }
+    }
+    .card:hover {
+      .card__button {
+        display: flex;
+        animation: appear-right-to-left .5s;
+      }
+    }
+    .card:hover .card__button img {
+      animation: rotate .5s;
+    }
+    &-button {
+      padding-bottom: 15px;
+      .btn {
+        padding: 15px 50px;
+      }
+    }
+    .card:not(:hover) {
+      .card__button {
+        animation: disappear-ledt-to-right .5s;
+      }
+    }
+  }

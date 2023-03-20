@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* (=^ᆺ^=) HEADER (=^ᆺ^=) */
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 14px -4px rgba(0, 0, 0, 0.53);
+  z-index: 2;
+  position: relative;
+}
+.navbar__logo {
+  text-align: center;
+}
+.navbar__logo img {
+  width: 170px;
+}
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+.navbar--menu .navbar__icon {
+  position: absolute;
+  left: 25px;
+}
+.navbar--menu .navbar__icon img {
+  width: 25px;
+}
+
+/*# sourceMappingURL=header.css.map */

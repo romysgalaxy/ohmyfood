@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/* (=^ᆺ^=) COMPONENT (=^ᆺ^=) */
+.btn {
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  color: #ffffff;
+  padding: 15px;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=component.css.map */

@@ -1,0 +1,14 @@
+/* (=^ᆺ^=) COMPONENT (=^ᆺ^=) */
+
+$color-white: #ffffff;
+$color-purple: #9356DC;
+$color-pink: #FF79DA;
+
+.btn {
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(180deg, $color-pink 0%, $color-purple 100%);
+    color: $color-white;
+    padding: 15px;
+    font-weight: 600;
+}

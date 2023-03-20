@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* (=^ᆺ^=) FOOTER (=^ᆺ^=) */
+.footer {
+  background-color: #353535;
+  padding: 20px;
+  color: #ffffff;
+}
+@media screen and (min-width: 1025px) {
+  .footer {
+    text-align: center;
+  }
+}
+.footer__logo {
+  width: 100px;
+  margin-bottom: 10px;
+  filter: invert(99%) sepia(0%) saturate(1126%) hue-rotate(318deg) brightness(116%) contrast(100%);
+}
+.footer .list {
+  padding-left: 0;
+  margin: 0;
+}
+.footer .list__item {
+  display: flex;
+}
+@media screen and (min-width: 1025px) {
+  .footer .list__item {
+    justify-content: center;
+  }
+}
+.footer .list img {
+  width: 20px;
+  margin-right: 7px;
+  filter: invert(99%) sepia(0%) saturate(1126%) hue-rotate(318deg) brightness(116%) contrast(100%);
+}
+.footer .list p {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,34 @@
+/* (=^ᆺ^=) GENERIC TAG (=^ᆺ^=) */
+
+$font-roboto: Roboto;
+$font-arial: Arial;
+$color-black: #000000;
+
+body {
+    font-family: $font-roboto, $font-arial;
+    font-size: 16px;
+    font-display: fallback;
+    color: $color-black;
+    margin: 0;
+    padding: 0;
+    h1, h2, h5, h4 {
+      font-size: 24px;
+      margin: 0;
+    }
+    h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+    p, a {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+  
+  #layout {
+    max-width: 1400px;
+    margin: 0 auto;
+  }

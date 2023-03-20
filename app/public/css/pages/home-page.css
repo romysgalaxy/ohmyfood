@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/* (=^ᆺ^=) HOME PAGE (=^ᆺ^=) */
+/* + background card */
+/* (=^ᆺ^=) LOCATION (=^ᆺ^=) */
+.location {
+  z-index: 1;
+  position: relative;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1400px) {
+  .location {
+    background-color: #ffffff;
+  }
+}
+.location__icon {
+  margin-right: 15px;
+  filter: invert(16%) sepia(1%) saturate(1635%) hue-rotate(85deg) brightness(102%) contrast(85%);
+}
+.location__content {
+  padding: 15px 0;
+  color: #353535;
+}
+
+/* (=^ᆺ^=) HERO HOME PAGE(=^ᆺ^=) */
+.hero {
+  background-color: #f7f7f7;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media screen and (min-width: 1400px) {
+  .hero {
+    border-radius: 25px;
+  }
+}
+.hero__title {
+  margin-bottom: 15px;
+}
+.hero__content {
+  margin-bottom: 25px;
+}
+
+/* (=^ᆺ^=) FUNCTIONING (=^ᆺ^=) */
+.functioning {
+  padding: 50px 20px;
+}
+.functioning__title {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1025px) {
+  .functioning__title {
+    text-align: center;
+  }
+}
+.functioning .card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1025px) {
+  .functioning .card-section {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.functioning .card {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  padding: 25px 20px;
+  box-shadow: 10px 12px 32px -7px rgba(0, 0, 0, 0.21);
+  position: relative;
+  max-width: 280px;
+}
+@media screen and (min-width: 350px) {
+  .functioning .card {
+    padding: 25px 40px;
+  }
+}
+.functioning .card__badge {
+  background-color: #9356dc;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: -15px;
+}
+.functioning .card__icon {
+  width: 25px;
+  margin-right: 20px;
+  filter: invert(59%) sepia(0%) saturate(648%) hue-rotate(253deg) brightness(84%) contrast(72%);
+}
+.functioning .card:hover {
+  background-color: #f5edff;
+}
+.functioning .card:hover .card__icon {
+  filter: invert(42%) sepia(63%) saturate(744%) hue-rotate(227deg) brightness(89%) contrast(94%);
+}
+
+/* (=^ᆺ^=) RESTAURANTS (=^ᆺ^=) */
+.restaurant {
+  background-color: #f7f7f7;
+  padding: 50px 20px;
+}
+@media screen and (min-width: 1400px) {
+  .restaurant {
+    border-radius: 25px 25px 0 0;
+  }
+}
+.restaurant__title {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1025px) {
+  .restaurant__title {
+    text-align: center;
+  }
+}
+.restaurant .card-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurant .card-padding {
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  .restaurant .card-padding {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .restaurant .card-padding {
+    width: 25%;
+  }
+}
+.restaurant .card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin: 10px 0;
+  box-shadow: 10px 12px 32px -7px rgba(0, 0, 0, 0.21);
+}
+@media screen and (min-width: 500px) {
+  .restaurant .card {
+    margin: 0.5em;
+  }
+}
+.restaurant .card-header {
+  height: 200px;
+  display: flex;
+  position: relative;
+}
+.restaurant .card-header__img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.restaurant .card-header__badge {
+  position: absolute;
+  background-color: #99E2D0;
+  color: #008766;
+  padding: 8px 15px;
+  border-radius: 2px;
+  right: 15px;
+  top: 15px;
+}
+.restaurant .card-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.restaurant .card-body__content--bold {
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+.restaurant .card-body__content--regular {
+  margin: 0;
+}
+.restaurant .card-body__favorite {
+  display: flex;
+  align-items: center;
+}
+.restaurant .card-body__favorite:hover .card-body__icon {
+  display: none;
+}
+.restaurant .card-body__favorite:hover .card-body__icon-full {
+  display: block;
+}
+.restaurant .card-body__icon-full {
+  display: none;
+}
+
+/*# sourceMappingURL=home-page.css.map */

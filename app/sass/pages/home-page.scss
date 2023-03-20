@@ -1,0 +1,203 @@
+/* (=^ᆺ^=) HOME PAGE (=^ᆺ^=) */
+
+$color-background: #eeeeee;
+$color-gray: #eaeaea;
+$color-white: #ffffff;
+$color-icon-localisation: #353535;
+$color-hero: #f7f7f7; /* + background card */
+$color-icon: #7e7e7e;
+$color-background-purple: #9356dc;
+$color-purple-hover: #f5edff;
+$color-background-green: #99E2D0;
+$color-font-green: #008766;
+
+  
+  /* (=^ᆺ^=) LOCATION (=^ᆺ^=) */
+  
+  .location {
+    z-index: 1;
+    position: relative;
+    background-color: $color-background;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 1400px) {
+      background-color: $color-white;
+    }
+    &__icon {
+      margin-right: 15px;
+      filter: invert(16%) sepia(1%) saturate(1635%) hue-rotate(85deg) brightness(102%) contrast(85%);
+    }
+    &__content {
+      padding: 15px 0;
+      color: $color-icon-localisation;
+    }
+  }
+  
+  /* (=^ᆺ^=) HERO HOME PAGE(=^ᆺ^=) */
+  
+  .hero {
+    background-color: $color-hero;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    text-align: center;
+    //align-items: baseline;
+    @media screen and (min-width: 1400px) {
+      border-radius: 25px;
+    }
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__content {
+      margin-bottom: 25px;
+    }
+  }
+  
+  /* (=^ᆺ^=) FUNCTIONING (=^ᆺ^=) */
+  
+  .functioning {
+    padding: 50px 20px;
+    &__title {
+      margin-bottom: 20px;
+      @media screen and (min-width: 1025px) {
+        text-align: center;
+      }
+    }
+    .card-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 1025px) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+    .card {
+      background-color: $color-hero;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 10px 0;
+      padding: 25px 20px;
+      @media screen and (min-width: 350px) {
+        padding: 25px 40px;
+      }
+      box-shadow: 10px 12px 32px -7px rgba(0,0,0,0.21);
+      position: relative;
+      max-width: 280px;
+      &__badge {
+        background-color: $color-background-purple;
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        left: -15px;
+      }
+      &__icon {
+        width: 25px;
+        margin-right: 20px;
+        filter: invert(59%) sepia(0%) saturate(648%) hue-rotate(253deg) brightness(84%) contrast(72%);
+      }
+    }
+    .card:hover {
+        background-color: $color-purple-hover;
+        .card__icon {
+            filter: invert(42%) sepia(63%) saturate(744%) hue-rotate(227deg) brightness(89%) contrast(94%);
+        }
+    }
+  }
+  
+  /* (=^ᆺ^=) RESTAURANTS (=^ᆺ^=) */
+  
+  .restaurant {
+    background-color: $color-hero;
+    padding: 50px 20px;
+    @media screen and (min-width: 1400px) {
+      border-radius: 25px 25px 0 0;
+    }
+    &__title {
+      margin-bottom: 20px;
+      @media screen and (min-width: 1025px) {
+        text-align: center;
+      }
+    }
+    .card-section {
+      display: flex;
+      flex-wrap: wrap;
+      // gap: 10px;
+      // row-gap: 10px;
+      // column-gap: 10px;
+    }
+    .card-padding {
+      width: 100%;
+      @media screen and (min-width: 500px) {
+        width: 50%;
+      }
+      @media screen and (min-width: 1025px) {
+        width: 25%;
+      }
+    }
+    .card {
+      border-radius: 20px;
+      background-color: $color-white;
+      margin: 10px 0;
+      box-shadow: 10px 12px 32px -7px rgba(0,0,0,0.21); 
+      @media screen and (min-width: 500px) {
+        margin: 0.5em;
+      }
+    }
+    .card-header {
+      height: 200px;
+      display: flex;
+      position: relative;
+      &__img {
+        object-fit: cover;
+        width: 100%;
+        border-radius: 20px 20px 0 0 ;
+      }
+      &__badge {
+        position: absolute;
+        background-color: $color-background-green;
+        color: $color-font-green;
+        padding: 8px 15px;
+        border-radius: 2px;
+        right: 15px;
+        top: 15px;
+      }
+    }
+    .card-body {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      &__content--bold {
+        font-weight: 600;
+        margin: 0 0 6px 0;
+      }
+      &__content--regular {
+        margin: 0;
+      }
+      &__favorite {
+        display: flex;
+        align-items: center;
+      }
+      &__favorite:hover {
+        .card-body__icon {
+          display: none;
+        }
+        .card-body__icon-full {
+          display: block;
+        }
+      }
+      &__icon-full {
+        display: none; 
+      }
+    }
+  }
