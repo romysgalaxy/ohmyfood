@@ -162,6 +162,8 @@ $color-green: #99e2d0;
       border-radius: 15px;
       display: flex;
       flex-direction: row;
+      position: relative;
+      overflow: hidden;
       justify-content: space-between;
       box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
       margin: 10px 0;
@@ -198,9 +200,13 @@ $color-green: #99e2d0;
         background-color: $color-green;
         width: 15%;
         border-radius: 0 15px 15px 0;
-        display: none;
         justify-content: center;
         align-items: center;
+        display: flex;
+        width: 0;
+        left: 61.1px;
+        position: relative;
+        transition-duration: .33s;
         img {
           width: 20px;
         }
@@ -208,8 +214,8 @@ $color-green: #99e2d0;
     }
     .card:hover {
       .card__button {
-        display: flex;
-        animation: appear-right-to-left .5s;
+        width: 61.1px;
+        left: 0;
       }
     }
     .card:hover .card__button img {
@@ -219,11 +225,6 @@ $color-green: #99e2d0;
       padding-bottom: 15px;
       .btn {
         padding: 15px 50px;
-      }
-    }
-    .card:not(:hover) {
-      .card__button {
-        animation: disappear-ledt-to-right .5s;
       }
     }
   }

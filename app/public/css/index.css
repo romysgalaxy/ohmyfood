@@ -396,6 +396,8 @@ body p, body a {
   border-radius: 15px;
   display: flex;
   flex-direction: row;
+  position: relative;
+  overflow: hidden;
   justify-content: space-between;
   box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.08);
   margin: 10px 0;
@@ -433,16 +435,20 @@ body p, body a {
   background-color: #99e2d0;
   width: 15%;
   border-radius: 0 15px 15px 0;
-  display: none;
   justify-content: center;
   align-items: center;
+  display: flex;
+  width: 0;
+  left: 61.1px;
+  position: relative;
+  transition-duration: 0.33s;
 }
 .menu .card__button img {
   width: 20px;
 }
 .menu .card:hover .card__button {
-  display: flex;
-  animation: appear-right-to-left 0.5s;
+  width: 61.1px;
+  left: 0;
 }
 .menu .card:hover .card__button img {
   animation: rotate 0.5s;
@@ -452,9 +458,6 @@ body p, body a {
 }
 .menu-button .btn {
   padding: 15px 50px;
-}
-.menu .card:not(:hover) .card__button {
-  animation: disappear-ledt-to-right 0.5s;
 }
 
 /* (=^ᆺ^=) HEADER (=^ᆺ^=) */
