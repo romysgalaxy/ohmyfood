@@ -3,9 +3,13 @@ jobs:
   build:
     # <Not provided for brevity>
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
-    npm install -g sass
-    sass --version
-    sass --watch sass:app/public/css
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compilation des fichiers CSS
+      - run: pwd
+      - run: npm install -g sass
+      - run: sass --version
+      - run: sass --watch sass:app/public/css
 
   # Deploy job
   deploy:
