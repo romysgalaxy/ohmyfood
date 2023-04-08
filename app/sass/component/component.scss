@@ -2,7 +2,9 @@
 
 $color-white: #ffffff;
 $color-purple: #9356DC;
+$color-purple-hover: #9e6bdd;
 $color-pink: #FF79DA;
+$color-pink-hover: #fd9ce1;
 
 .btn {
     border-radius: 25px;
@@ -11,4 +13,10 @@ $color-pink: #FF79DA;
     color: $color-white;
     padding: 15px;
     font-weight: 600;
+}
+
+.btn:hover {
+    background: linear-gradient(180deg, $color-pink-hover 0%, $color-purple-hover 100%);
+    color: $color-white;
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.48)
 }

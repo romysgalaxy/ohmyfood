@@ -56,6 +56,14 @@
     transform: rotate(360deg);
   }
 }
+@keyframes appear-bottom-to-top {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
 .menu .menu-body:nth-child(1) {
   animation-delay: 0s;
 }
@@ -106,15 +114,18 @@
 .menu-header__favorite {
   display: flex;
   align-items: center;
-}
-.menu-header__favorite:hover .menu-header__icon {
-  display: none;
+  position: relative;
 }
 .menu-header__favorite:hover .menu-header__icon-full {
   display: block;
+  animation: appear-bottom-to-top 1s forwards;
+}
+.menu-header__icon {
+  position: absolute;
+  z-index: 1;
 }
 .menu-header__icon-full {
-  display: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 .menu-body {
   width: 100%;

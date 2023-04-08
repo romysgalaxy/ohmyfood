@@ -9,4 +9,10 @@
   font-weight: 600;
 }
 
+.btn:hover {
+  background: linear-gradient(180deg, #fd9ce1 0%, #9e6bdd 100%);
+  color: #ffffff;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.48);
+}
+
 /*# sourceMappingURL=component.css.map */

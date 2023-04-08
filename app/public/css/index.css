@@ -39,9 +39,50 @@ body p, body a {
   font-weight: 600;
 }
 
+.btn:hover {
+  background: linear-gradient(180deg, #fd9ce1 0%, #9e6bdd 100%);
+  color: #ffffff;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.48);
+}
+
 /* (=^ᆺ^=) HOME PAGE (=^ᆺ^=) */
 /* + background card */
 /* (=^ᆺ^=) LOCATION (=^ᆺ^=) */
+@keyframes hide-loading {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  99% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hide-loading 2s forwards;
+}
+.loading img {
+  animation: spin 2s linear infinite, hide-loading 2s forwards;
+}
+
 .location {
   z-index: 1;
   position: relative;
@@ -150,6 +191,14 @@ body p, body a {
 }
 
 /* (=^ᆺ^=) RESTAURANTS (=^ᆺ^=) */
+@keyframes appear-bottom-to-top {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
 .restaurant {
   background-color: #f7f7f7;
   padding: 50px 20px;
@@ -229,15 +278,18 @@ body p, body a {
 .restaurant .card-body__favorite {
   display: flex;
   align-items: center;
-}
-.restaurant .card-body__favorite:hover .card-body__icon {
-  display: none;
+  position: relative;
 }
 .restaurant .card-body__favorite:hover .card-body__icon-full {
   display: block;
+  animation: appear-bottom-to-top 1s forwards;
+}
+.restaurant .card-body__icon {
+  position: absolute;
+  z-index: 1;
 }
 .restaurant .card-body__icon-full {
-  display: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 /* (=^ᆺ^=) MENU (=^ᆺ^=) */
@@ -297,6 +349,14 @@ body p, body a {
     transform: rotate(360deg);
   }
 }
+@keyframes appear-bottom-to-top {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
 .menu .menu-body:nth-child(1) {
   animation-delay: 0s;
 }
@@ -347,15 +407,18 @@ body p, body a {
 .menu-header__favorite {
   display: flex;
   align-items: center;
-}
-.menu-header__favorite:hover .menu-header__icon {
-  display: none;
+  position: relative;
 }
 .menu-header__favorite:hover .menu-header__icon-full {
   display: block;
+  animation: appear-bottom-to-top 1s forwards;
+}
+.menu-header__icon {
+  position: absolute;
+  z-index: 1;
 }
 .menu-header__icon-full {
-  display: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 .menu-body {
   width: 100%;
@@ -530,8 +593,8 @@ body p, body a {
 - 350
 - 500px
 - 1025px
--1300px
--1400
+- 1300px
+- 1400
 */
 
 /*# sourceMappingURL=index.css.map */

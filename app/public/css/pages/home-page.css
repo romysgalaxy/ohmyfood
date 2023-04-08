@@ -2,6 +2,41 @@
 /* (=^ᆺ^=) HOME PAGE (=^ᆺ^=) */
 /* + background card */
 /* (=^ᆺ^=) LOCATION (=^ᆺ^=) */
+@keyframes hide-loading {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  99% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hide-loading 2s forwards;
+}
+.loading img {
+  animation: spin 2s linear infinite, hide-loading 2s forwards;
+}
+
 .location {
   z-index: 1;
   position: relative;
@@ -110,6 +145,14 @@
 }
 
 /* (=^ᆺ^=) RESTAURANTS (=^ᆺ^=) */
+@keyframes appear-bottom-to-top {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
 .restaurant {
   background-color: #f7f7f7;
   padding: 50px 20px;
@@ -189,15 +232,18 @@
 .restaurant .card-body__favorite {
   display: flex;
   align-items: center;
-}
-.restaurant .card-body__favorite:hover .card-body__icon {
-  display: none;
+  position: relative;
 }
 .restaurant .card-body__favorite:hover .card-body__icon-full {
   display: block;
+  animation: appear-bottom-to-top 1s forwards;
+}
+.restaurant .card-body__icon {
+  position: absolute;
+  z-index: 1;
 }
 .restaurant .card-body__icon-full {
-  display: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 
 /*# sourceMappingURL=home-page.css.map */

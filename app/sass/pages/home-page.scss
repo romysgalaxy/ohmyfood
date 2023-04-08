@@ -13,6 +13,43 @@ $color-font-green: #008766;
 
   
   /* (=^ᆺ^=) LOCATION (=^ᆺ^=) */
+
+  @keyframes hide-loading {
+    0% {
+      opacity: 1;
+      z-index: 3;
+    }
+    99%{
+      opacity: 1;
+      z-index: 3;
+    }
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: hide-loading 2s forwards;
+    img {
+      animation: spin 2s linear infinite, hide-loading 2s forwards;
+    }
+  }
   
   .location {
     z-index: 1;
@@ -42,9 +79,7 @@ $color-font-green: #008766;
     padding: 40px;
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     text-align: center;
-    //align-items: baseline;
     @media screen and (min-width: 1400px) {
       border-radius: 25px;
     }
@@ -116,6 +151,15 @@ $color-font-green: #008766;
   }
   
   /* (=^ᆺ^=) RESTAURANTS (=^ᆺ^=) */
+
+  @keyframes appear-bottom-to-top {
+    from {
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
   
   .restaurant {
     background-color: $color-hero;
@@ -132,9 +176,6 @@ $color-font-green: #008766;
     .card-section {
       display: flex;
       flex-wrap: wrap;
-      // gap: 10px;
-      // row-gap: 10px;
-      // column-gap: 10px;
     }
     .card-padding {
       width: 100%;
@@ -187,17 +228,20 @@ $color-font-green: #008766;
       &__favorite {
         display: flex;
         align-items: center;
+        position: relative;
       }
       &__favorite:hover {
-        .card-body__icon {
-          display: none;
-        }
         .card-body__icon-full {
           display: block;
+          animation: appear-bottom-to-top 1s forwards;
         }
       }
+      &__icon {
+        position: absolute;
+        z-index: 1;
+      }
       &__icon-full {
-        display: none; 
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
       }
     }
   }
