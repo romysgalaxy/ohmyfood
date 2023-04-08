@@ -5,7 +5,7 @@ jobs:
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
     npm install -g sass
     sass --version
-    sass --watch sass:public/css
+    sass --watch sass:app/public/css
 
   # Deploy job
   deploy:
